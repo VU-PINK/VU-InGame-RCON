@@ -1,5 +1,5 @@
 -- Debug Prints
-g_Prints = true
+g_Prints = false
 -- Chat Returns Changes
 g_ChatReturns = true
 
