@@ -1,5 +1,5 @@
--- Allow Prints
-g_Prints = true
+-- Debug Prints
+g_Prints = false
 
 -- Admins
 g_ADMINS = {
