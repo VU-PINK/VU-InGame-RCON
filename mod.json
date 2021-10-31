@@ -1,0 +1,8 @@
+{
+	"Name": "VU-InGame-RCON",
+	"Authors": ["IllustrisJack"],
+	"Description": "Finally Use RCON InGame lol",
+	"Version": "0.1.0",
+	"HasWebUI": false,
+	"HasVeniceEXT": true
+}
