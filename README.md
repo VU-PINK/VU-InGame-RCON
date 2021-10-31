@@ -2,7 +2,7 @@
 ## Does stuff.
 Use with VU Console.
 
-Add Admins in Shared/Config.lua
+Add Admins in Shared/Config.lua -
 You can also handle temporary Admins with 
 ```
 temporaryAdmins.add {name}
