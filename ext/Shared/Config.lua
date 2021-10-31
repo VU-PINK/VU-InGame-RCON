@@ -1,5 +1,7 @@
 -- Debug Prints
-g_Prints = false
+g_Prints = true
+-- Chat Returns Changes
+g_ChatReturns = true
 
 -- Admins
 g_ADMINS = {

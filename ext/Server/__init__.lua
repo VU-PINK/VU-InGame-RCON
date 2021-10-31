@@ -37,8 +37,9 @@ function RCONManagerServer:CheckFollowUp(p_Player, p_Command, p_ServerReturn)
         RCON:SendCommand("mapList.save")
     else
         for _, l_Return in pairs(p_ServerReturn) do
-            if p_ServerReturn ~= "OK" then
-                ChatManager:SendMessage("Set " .. p_Command .. " to " .. l_Return, p_Player)
+            if not string.find(l_Return, "OK") and g_ChatReturns then
+                print("Set " .. p_Command .. " to " .. l_Return .. " by " ..  p_Player.name)
+                ChatManager:SendMessage("Set " .. p_Command .. " to " .. l_Return .. " by " .. p_Player.name)
             end
         end
     end
