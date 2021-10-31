@@ -1,18 +1,25 @@
 # VU-InGame-RCON
-Does stuff.
+## Does stuff.
 Use with VU Console.
 
 Add Admins in Shared/Config.lua
-You can also set temporary Admins with 
-  - temporaryAdmins.add <name>
-
+You can also handle temporary Admins with 
+```
+temporaryAdmins.add {name}
+temporaryAdmins.remove {name}
+temporaryAdmins.list
+```
 You call all RCON Commands as:
-  - vu-ingame-rcon.<command> <value>
+```
+vu-ingame-rcon.{command} {value}
+```
 
 I recommend to change the folder name of the mod to something shorter that you would like as prefix.
 e.G folder name: rcon
 --> new command structure: 
-  - rcon.<command> <value>
+```
+rcon.{command} {value}
+```
 
 
 RCON Documentation:
