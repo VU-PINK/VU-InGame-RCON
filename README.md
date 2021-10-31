@@ -24,3 +24,12 @@ rcon.{command} {value}
 
 RCON Documentation:
 https://github.com/dcodeIO/BattleCon/blob/master/eadocs/BF3/BF3%20PC%20Server%20Remote%20Administration%20Protocol.pdf
+
+
+
+## Advanced RCON
+Doesn´t include commands introduced by AdvancedRCON by Bree
+https://github.com/FlashHit/AdvancedRCON
+Feel free to add the commands manually if you want to use them.
+
+
