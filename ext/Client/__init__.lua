@@ -26,6 +26,8 @@ function RCONManager:RegisterVars()
             kill = {"admin.killPlayer", "<name>"},
             ban = {"banList.add", "<id-type, id, timeout, reason>"},
             banRemove = {"banList.remove", "<id-type, id>"},
+            banClear = {"banList.clear", "Clears the Banlist"},
+            banList = {"banList.list", "Lists all banned players"},
             temporaryAdminAdd = {"temporaryAdmin.add", "<name>"},
             temporaryAdminRemove = {"temporaryAdmin.remove", "<name>"},
             listRCONAdmins = {"temporaryAdmin.list", " "}

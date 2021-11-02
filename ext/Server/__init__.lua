@@ -18,7 +18,7 @@ function RCONManagerServer:OnCommandReceived(p_Player, p_Command, p_Args)
     if g_Prints then
         print("Received Command: " .. p_Command .. "from " .. p_Player.name)
     end
-    
+
     local s_ServerReturn = RCON:SendCommand(p_Command, p_Args)
 
     if s_ServerReturn ~= nil then
