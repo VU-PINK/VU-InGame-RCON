@@ -16,7 +16,7 @@ end
 
 function RCONManagerServer:OnCommandReceived(p_Player, p_Command, p_Args)
     if g_Prints then
-        print("Received Command: " .. p_Command .. "from " .. p_Player.name)
+        print("Received Command: " .. p_Command .. " from " .. p_Player.name)
     end
 
     local s_ServerReturn = RCON:SendCommand(p_Command, p_Args)
@@ -28,11 +28,13 @@ end
 
 function RCONManagerServer:CheckFollowUp(p_Player, p_Command, p_ServerReturn)
     if g_Prints then
-        print("Checking Follow Up Command: " .. p_Command .. "from " .. p_Player.name)
+        print("Checking Follow Up Command: " .. p_Command .. " from " .. p_Player.name)
     end
 
     if p_Command == "banList.add" or p_Command == "banList.remove" then
         RCON:SendCommand("banList.save")
+    elseif p_Command == "banList.list" then
+        print(p_ServerReturn)
     elseif p_Command == "mapList.add" or p_Command == "mapList.remove" then
         RCON:SendCommand("mapList.save")
     else

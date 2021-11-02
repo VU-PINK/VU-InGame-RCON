@@ -117,8 +117,15 @@ end
 
 function RCONManager:CheckIfAdmin()
     -- Check if admin
+    if type(self.m_PlayerIsAdmin) ~= "string" then
+        self.m_PlayerIsAdmin = PlayerManager:GetLocalPlayer().name
+    end
+
     for _, l_Admin in pairs(g_ADMINS) do
         if string.find(string.lower(l_Admin), string.lower(self.m_PlayerName)) then
+            if g_Prints then
+                print("Found Admin: " .. l_Admin)
+            end
             self.m_PlayerIsAdmin = true
             return
         end
@@ -170,8 +177,26 @@ function RCONManager:RegisterCommands()
             else
                 Console:Register(l_Command[1], l_Command[2], function(p_Args)
                     self:CheckIfAdmin()
+                    local s_Arguments = {""}
+
+                    for _, l_Argument in ipairs(p_Args) do
+                        if g_Prints then
+                            print(l_Argument)
+                        end
+
+                        s_Arguments[1] = s_Arguments[1] .. " " .. l_Argument
+
+                        if string.find(l_Command[2], "true") then
+                            s_Arguments[1] = l_Argument
+                        end
+                    end
+
+                    if g_Prints then
+                        print(s_Arguments)
+                    end
+
                     if self.m_PlayerIsAdmin then
-                        NetEvents:Send("RCONManager:SendToServer", l_Command[1], p_Args)
+                        NetEvents:Send("RCONManager:SendToServer", l_Command[1], s_Arguments)
                     end
                 end)
             end
